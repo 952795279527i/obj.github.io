@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./my.css">
+    <script src="./vs/jquery.js"></script>
+    <link
+      rel="stylesheet"
+      href="./vs/animate.min.css"
+    />
+    <script src="./vs/echarts.common.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="bov">
+            <div class="bos">
+                <div class="bos-word">待办事项</div>
+                <div class="bos-nav">
+                    <div class="nav-bos">
+                       <p>待发货订单</p>
+                       <p>单位(笔)</p>
+                       <p id="p3-1">4</p>    
+                    </div>
+                    <div class="nav-bos">
+                        <p>待处理售后</p>
+                       <p>单位(笔)</p>
+                       <p id="p3-2">0</p>    
+                    </div>
+                    <div class="nav-bos">
+                        <p>待付款订单</p>
+                       <p>单位(笔)</p>
+                       <p id="p3-3" >113</p>    
+                    </div>
+                    <div class="nav-bos">
+                        <p>待补货商品</p>
+                       <p>单位(个)</p>
+                       <p id="p3-4">0</p>    
+                    </div>
+                    <div class="nav-bos">
+                        <p>待审核会员</p>
+                       <p>单位(个)</p>
+                       <p id="p3-5">0</p>    
+                    </div>
+                    <div class="nav-bos">
+                        <p>待审核佣金</p>
+                       <p>单位(元)</p>
+                       <p id="p3-6">948.19</p>    
+                    </div>
+                </div>
+            </div>
+            <div class="bos2-histogram">
+                <div class="histogram-left">
+                <div class="bos2-member">
+                    <div class='member-left'>新增会员</div>
+                    <div class="an">
+                        <button onclick="btn1()">今天</button>
+                        <button onclick="btn2()">昨天</button>
+                        <button onclick="btn3()">近7日</button>
+                        <button onclick="btn4()">近30日</button>
+                      </div> 
+                </div>
+                <div class="bos2-chart">
+                    <div id="main" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="mainw" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="maine" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="mainr" style="width: 500px; height: 350px; float: left"></div>
+                </div>
+             </div>
+             <div class="histogram-left">
+                <div class="bos2-member">
+                    <div class='member-left'>新增订单</div>
+                    <div class="an">
+                        <button onclick="btn5()">今天</button>
+                        <button onclick="btn6()">昨天</button>
+                        <button onclick="btn7()">近7日</button>
+                        <button onclick="btn8()">近30日</button>
+                      </div> 
+                </div>
+                <div class="bos2-chart">
+                    <div id="order1" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="order2" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="order3" style="width: 500px; height: 350px; float: left"></div>
+                    <div id="order4" style="width: 500px; height: 350px; float: left"></div>
+                </div>
+             </div>
+            </div>
+            <div class="operationa">
+                <div class='operationa-top'>
+                    <div class="oper-left">运营数据<i></i></div>
+                    <div  class="oper-right">
+                        <input type="text" name="" class="daa" value="2023-5-12">
+                        <span>-</span>
+                        <input type="text" name="" class="daa" value="2023-5-12">
+                        <button onclick="btn9()">今天</button>
+                        <button onclick="btn10()">昨天</button>
+                        <button onclick="btn11()">近7日</button>
+                        <button onclick="btn12()">近30日</button>
+                    </div>
+                </div>
+                <div class='operationa-bot'>
+                    <div class="bot-left">
+                        <div class="xuan">
+                           <p>成交金额(元)</p>
+                           <p>796</p>
+                           <p>较昨日<span>▲&nbsp;30.6%</span></p>
+                        </div>
+                        <div class="xuan">
+                            <p>退款金额(元)</p>
+                            <p>0</p>
+                            <p>较昨日<span>▲&nbsp;100%</span></p>
+                         </div>
+                         <div class="xuan">
+                            <p>支付订单数(笔)</p>
+                            <p>4</p>
+                            <p>较昨日<span>▲&nbsp;100%</span></p>
+                         </div>
+                         <div class="xuan">
+                            <p>支付人数(人)</p>
+                            <p>4</p>
+                            <p>较昨日<span>▲&nbsp;0.5%</span></p>
+                         </div>
+                         <div class="xuan">
+                            <p>客单价(元)</p>
+                            <p>199</p>
+                            <p>较昨日<span>▼&nbsp;-34.6%</span></p>
+                         </div>
+                         <div class="xuan">
+                            <p>笔单价(元)</p>
+                            <p>199</p>
+                            <p>较昨日<span>▼&nbsp;-34.6%</span></p>
+                         </div>
+                    </div>
+                    <div class="chartbos">
+                        <div id="order5" style="width: 500px; height: 400px; float: left"></div>
+                        <div id="order7" style="width: 500px; height: 400px; float: left"></div>
+                        <div id="order8" style="width: 500px; height: 400px; float: left"></div>
+                        <div id="order6" style="width: 500px; height: 400px; float: left"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            btn1();
+            btn5();
+            btn9()
+        })();
+        function btn2() {
+          $("#main").css("display", "none");
+          $("#mainr").css("display", "none");
+          $("#maine").css("display", "none");
+          $("#mainw").css("display", "block");
+          var chartDom = document.getElementById("mainw");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 1],
+            ["03:00", 2],
+            ["06:00", 12],
+            ["09:00", 23],
+            ["12:00", 44],
+            ["15:00", 32],
+            ["18:00", 18],
+            ["21:00",5],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{
+                name:'单位(人)'
+            }],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                      showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn1() {
+          $("#mainw").css("display", "none");
+          $("#mainr").css("display", "none");
+          $("#maine").css("display", "none");
+          $("#main").css("display", "block");
+          var chartDom = document.getElementById("main");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 0],
+            ["03:00", 44],
+            ["06:00", 88],
+            ["09:00", 110],
+            ["12:00", 100],
+            ["15:00", 98],
+            ["18:00", 77],
+            ["21:00", 67],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(人)'}],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn3() {
+          $("#mainw").css("display", "none");
+          $("#main").css("display", "none");
+          $("#mainr").css("display", "none");
+          $("#maine").css("display", "block");
+    
+          var chartDom = document.getElementById("maine");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-04-30", 431, 411],
+            ["2023-05-01", 327, 307],
+            ["2023-05-02", 357, 327],
+            ["2023-05-03", 352, 342],
+            ["2023-05-04", 304, 324],
+            ["2023-05-05", 184, 164],
+            ["2023-05-06", 389, 349],
+            ["2023-05-07", 426, 356],
+            ["2023-05-08", 74, 54],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#61CBB9", "#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            // Make gradient line here
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(人)'}],
+            series: [
+              {
+                name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+        function btn4() {
+          $("#mainw").css("display", "none");
+          $("#main").css("display", "none");
+          $("#maine").css("display", "none");
+          $("#mainr").css("display", "block");
+          var chartDom = document.getElementById("mainr");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-05-07", 113, 72],
+            ["2023-05-11", 355, 79],
+            ["2023-05-15", 109, 92],
+            ["2023-05-19", 250, 69],
+            ["2023-05-23", 326, 90],
+            ["2023-05-27", 302, 142],
+            ["2023-05-01", 311, 74],
+            ["2023-05-05", 304, 113],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#61CBB9", "#61CBB9"],
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+      
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [
+              {
+                name:'单位(人)',
+                type: "value",
+                axisLabel: {
+                  formatter: (value, index) => {
+                    return `${value / 1000}k`;
+                  },
+                },
+              },
+            ],
+            series: [
+              {
+                name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+
+
+
+        function btn6() {
+          $("#order1").css("display", "none");
+          $("#order3").css("display", "none");
+          $("#order4").css("display", "none");
+          $("#order2").css("display", "block");
+          var chartDom = document.getElementById("order2");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 1],
+            ["03:00", 2],
+            ["06:00", 12],
+            ["09:00", 23],
+            ["12:00", 44],
+            ["15:00", 35],
+            ["18:00", 23],
+            ["21:00", 12],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#94bdf9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{
+                name:'单位(笔)'
+            }],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'bar',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn5() {
+          $("#order4").css("display", "none");
+          $("#order3").css("display", "none");
+          $("#order2").css("display", "none");
+          $("#order1").css("display", "block");
+          var chartDom = document.getElementById("order1");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 0],
+            ["03:00", 1],
+            ["06:00", 0],
+            ["09:00", 3],
+            ["12:00", 0],
+            ["15:00", 0],
+            ["18:00", 0],
+            ["21:00", 0],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#94bdf9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(笔)'}],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'bar',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn7() {
+          $("#order1").css("display", "none");
+          $("#order2").css("display", "none");
+          $("#order4").css("display", "none");
+          $("#order3").css("display", "block");
+    
+          var chartDom = document.getElementById("order3");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-04-30", 431, 411],
+            ["2023-05-01", 327, 307],
+            ["2023-05-02", 357, 327],
+            ["2023-05-03", 352, 342],
+            ["2023-05-04", 304, 324],
+            ["2023-05-05", 184, 164],
+            ["2023-05-06", 389, 349],
+            ["2023-05-07", 426, 356],
+            ["2023-05-08", 74, 54],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#94bdf9", "#7dbd3f"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            // Make gradient line here
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(笔)'}],
+            series: [
+              {
+                name: 'PV',
+                      type: 'bar',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+        function btn8() {
+          $("#order1").css("display", "none");
+          $("#order2").css("display", "none");
+          $("#order3").css("display", "none");
+          $("#order4").css("display", "block");
+          var chartDom = document.getElementById("order4");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-05-07", 113, 72],
+            ["2023-05-11", 355, 79],
+            ["2023-05-15", 109, 92],
+            ["2023-05-19", 250, 69],
+            ["2023-05-23", 326, 90],
+            ["2023-05-27", 302, 142],
+            ["2023-05-01", 311, 74],
+            ["2023-05-05", 304, 113],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#94bdf9", "#7dbd3f"],
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+      
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [
+              {
+                name:'单位(笔)',
+                type: "value",
+                axisLabel: {
+                  formatter: (value, index) => {
+                    return `${value / 1000}k`;
+                  },
+                },
+              },
+            ],
+            series: [
+              {
+                name: 'PV',
+                      type: 'bar',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'bar',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+
+
+        function btn9() {
+          $("#order8").css("display", "none");
+          $("#order7").css("display", "none");
+          $("#order6").css("display", "none");
+          $("#order5").css("display", "block");
+          var chartDom = document.getElementById("order5");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 0],
+            ["02:00", 0],
+            ["04:00", 0],
+            ["06:00", 150],
+            ["08:00", 0],
+            ["10:00", 680],
+            ["12:00", 0],
+            ["14:00",0],
+            ["16:00", 0],
+            ["18:00", 0],
+            ["20:00", 0],
+            ["22:00", 0],
+            ["24:00", 0],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{
+                name:'单位(人)'
+            }],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                      showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn10() {
+          $("#order8").css("display", "none");
+          $("#order7").css("display", "none");
+          $("#order5").css("display", "none");
+          $("#order6").css("display", "block");
+          var chartDom = document.getElementById("order6");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["00:00", 0],
+            ["03:00", 44],
+            ["06:00", 88],
+            ["09:00", 110],
+            ["12:00", 100],
+            ["15:00", 98],
+            ["18:00", 77],
+            ["21:00", 67],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          option = {
+            color: ["#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(人)'}],
+            series: [
+                  {
+                      name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+                  },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    
+        function btn11() {
+          $("#order8").css("display", "none");
+          $("#order6").css("display", "none");
+          $("#order5").css("display", "none");
+          $("#order7").css("display", "block");
+    
+          var chartDom = document.getElementById("order7");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-04-30", 431, 411],
+            ["2023-05-01", 327, 307],
+            ["2023-05-02", 357, 327],
+            ["2023-05-03", 352, 342],
+            ["2023-05-04", 304, 324],
+            ["2023-05-05", 184, 164],
+            ["2023-05-06", 389, 349],
+            ["2023-05-07", 426, 356],
+            ["2023-05-08", 74, 54],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#61CBB9", "#61CBB9"],
+            legend: {
+                type: "plain",
+                data:['PV','UV']
+              },
+            // Make gradient line here
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [{name:'单位(人)'}],
+            series: [
+              {
+                name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+        function btn12() {
+          $("#order5").css("display", "none");
+          $("#order6").css("display", "none");
+          $("#order7").css("display", "none");
+          $("#order8").css("display", "block");
+          var chartDom = document.getElementById("order8");
+          var myChart = echarts.init(chartDom);
+          var option;
+          const data = [
+            ["2023-05-07", 113, 72],
+            ["2023-05-11", 355, 79],
+            ["2023-05-15", 109, 92],
+            ["2023-05-19", 250, 69],
+            ["2023-05-23", 326, 90],
+            ["2023-05-27", 302, 142],
+            ["2023-05-01", 311, 74],
+            ["2023-05-05", 304, 113],
+          ];
+          let str = 0
+          for (let i = 0; i < data.length; i++) {
+            str += data[i][1]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl h3').html(str+ 'KB')
+          let str1 = 0
+          for (let i = 0; i < data.length; i++) {
+            str1 += data[i][2]
+            // console.log(data[i][1]);
+            
+          }
+          console.log(str);
+          $('.akkl1 h3').html(str1+ 'KB')
+          const dateList = data.map(function (item) {
+            return item[0];
+          });
+          const valueList = data.map(function (item) {
+            return item[1];
+          });
+          const valueList2 = data.map(function (item) {
+            return item[2];
+          });
+          option = {
+            color: ["#61CBB9", "#61CBB9"],
+            visualMap: [
+              {
+                show: false,
+                type: "continuous",
+                seriesIndex: 0,
+                min: 0,
+                max: 400,
+              },
+            ],
+      
+            title: [
+              {
+                left: "center",
+                text: "",
+              },
+            ],
+            tooltip: {
+              trigger: "axis",
+            },
+            xAxis: [
+              {
+                data: dateList,
+              },
+            ],
+            yAxis: [
+              {
+                name:'单位(人)',
+                type: "value",
+                axisLabel: {
+                  formatter: (value, index) => {
+                    return `${value / 1000}k`;
+                  },
+                },
+              },
+            ],
+            series: [
+              {
+                name: 'PV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+              {
+                name: 'UV',
+                      type: 'line',
+                      smooth: true,
+                        showSymbol: false,
+                      data: valueList2,
+                      areaStyle: {
+                        color:'rgba(97, 203, 185,0.3)'
+                        },
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+    </script>
+</body>
+</html>
